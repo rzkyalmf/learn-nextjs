@@ -1,0 +1,18 @@
+### User Register
+POST http://localhost:3000/api/auth/register
+
+{
+    "name": "",
+    "email": "alam_hash@gmail.com",
+    "password": "passwordhash"
+}
+
+### User Login
+POST http://localhost:3000/api/auth/login
+
+{
+    "email": "alam_hash@gmail.com",
+    "password": "passwordhash"
+}
+
+
