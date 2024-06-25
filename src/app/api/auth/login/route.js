@@ -31,7 +31,7 @@ export async function POST(req) {
     email: userLogin.email,
   };
 
-  const token = jwt.sign(payload, "secretkey", {
+  const token = jwt.sign(payload, process.env.SECRET_KEY, {
     expiresIn: "1h",
   });
 

@@ -1,3 +1,27 @@
+import { Dashboard } from "@/components/dashboard";
+
+import { cookies } from "next/headers";
+import jwt from "jsonwebtoken";
+
+export default function Layout({ children }) {
+  const cookiesStore = cookies();
+
+  // 1. Ambil Token dari cookies
+  const token = cookiesStore.get("token");
+
+  // 2. Decode token
+  const payload = jwt.decode(token.value);
+  // console.log(payload);
+
+  return (
+    <Dashboard name={payload.name} email={payload.email}>
+      {children}
+    </Dashboard>
+  );
+}
+
+// Protect Route Dengan Layout
+
 // import { Dashboard } from "@/components/dashboard";
 
 // import { cookies } from "next/headers";

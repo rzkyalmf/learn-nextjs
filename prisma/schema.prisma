@@ -3,8 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
 model User {
@@ -12,6 +13,12 @@ model User {
   name String
   email String @unique
   password String
+}
+
+model File {
+  id String @id @default(cuid())
+  key String
+  author String
 }
 
 

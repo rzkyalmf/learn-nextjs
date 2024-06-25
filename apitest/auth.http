@@ -16,3 +16,5 @@ POST http://localhost:3000/api/auth/login
 }
 
 
+### Delete Files
+DELETE  http://localhost:3000/api/delete/test
