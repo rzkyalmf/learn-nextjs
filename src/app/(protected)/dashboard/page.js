@@ -1,4 +1,5 @@
 import { UploadData } from "@/components/uploaddata";
+import { DeleteBtn } from "@/components/deleteBtn";
 import Image from "next/image";
 
 export default async function Page() {
@@ -7,8 +8,6 @@ export default async function Page() {
   });
   const allFiles = await res.json();
   const data = allFiles.data;
-
-  // console.log(data);
 
   const publicUrl =
     "https://pub-ab7c0457350c44929f23932327db41ab.r2.dev/learn-create-storage";
@@ -27,6 +26,7 @@ export default async function Page() {
                 alt=""
               />
               <div>{item.key}</div>
+              <DeleteBtn folder={item.id} fileKey={item.key} />
             </div>
           );
         })}

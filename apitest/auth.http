@@ -17,4 +17,17 @@ POST http://localhost:3000/api/auth/login
 
 
 ### Delete Files
-DELETE  http://localhost:3000/api/delete/test
+DELETE  http://localhost:3000/api/delete
+
+{
+    "folder": "XpJxkZDSUSMdYY_AcpJqN",
+    "key": "4.png"
+}
+
+### Update Files
+PATCH  http://localhost:3000/api/update
+
+{
+    "folder": "_IsS2mJB8RhrlJN8PWheb",
+    "key": "Foto Terbaru.jpg"
+}

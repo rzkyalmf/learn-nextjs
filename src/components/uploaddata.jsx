@@ -4,8 +4,8 @@ import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 
 export const UploadData = () => {
-  const router = useRouter();
   const [message, setMessage] = useState("");
+  const router = useRouter();
   const formRef = useRef(null);
 
   async function handleUpload(formData) {
