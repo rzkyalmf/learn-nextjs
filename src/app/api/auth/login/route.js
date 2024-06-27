@@ -33,6 +33,7 @@ export async function POST(req) {
 
   const token = jwt.sign(payload, process.env.SECRET_KEY, {
     expiresIn: "1h",
+    // httpOnly: true,
   });
 
   // 4. Return jika berhasil
@@ -40,7 +41,7 @@ export async function POST(req) {
     status: 200,
     headers: {
       "Content-Type": "application/json",
-      "Set-Cookie": `token=${token}; Path=/; Max-Age=3600`,
+      "Set-Cookie": `token=${token}; Path=/; Max-Age=3600; HttpOnly;`,
     },
   });
 }

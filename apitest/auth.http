@@ -25,9 +25,9 @@ DELETE  http://localhost:3000/api/delete
 }
 
 ### Update Files
-PATCH  http://localhost:3000/api/update
+PATCH  http://localhost:3000/api/edit/testupdate
 
 {
-    "folder": "_IsS2mJB8RhrlJN8PWheb",
-    "key": "Foto Terbaru.jpg"
+    "file": "nama file baru",
+    "author": "author baru"
 }
